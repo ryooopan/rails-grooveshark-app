@@ -1,6 +1,15 @@
 RailsGroovesharkApp::Application.routes.draw do
 
-  resources :songs
+  get 'favorites' => 'users#favorites'
+  get 'playlists' => 'users#playlists'
+
+  get 'songs' => 'songs#index'
+  get 'songs/serach/:query' => 'songs#index'
+  get 'songs/:id' => 'songs#show'
+
+  # 'songs/:id' => 'songs#show'
+  # 'playlists/:id' => 'playlists#show'
+    
 
 
   # The priority is based upon order of creation:
